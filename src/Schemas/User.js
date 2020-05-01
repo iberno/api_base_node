@@ -8,4 +8,4 @@ const UserSchema = new Schema({
   phone: String,
 });
 
-mongoose.model('Users', UserSchema);
+export default mongoose.model('User', UserSchema);
