@@ -2,6 +2,12 @@ import User from '../Schemas/User'
 import { hash } from 'bcrypt';
  
 class UserController {
+  // List Users
+  async index(req, res) {
+    const users = await User.find();
+    return res.json(users);
+  }
+  // Create user
   async create(req, res) {
     const { name, email, username, password, phone } = req.body;
 
@@ -9,7 +15,7 @@ class UserController {
     const user = await User.create({
       name, 
       email, 
-      username, 
+      username,
       password: passCrypt, 
       phone
     });   
