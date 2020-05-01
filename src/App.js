@@ -7,8 +7,11 @@ class App {
     this.server = express();
   
     this.database();
-    this.server.use(express.json());
+    this.middleware();
     this.routes();
+  }
+  middleware() {
+    this.server.use(express.json());
   }
 
   database() {
